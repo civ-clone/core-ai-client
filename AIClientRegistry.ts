@@ -12,4 +12,6 @@ export class AIClientRegistry
   }
 }
 
+export const instance: AIClientRegistry = new AIClientRegistry();
+
 export default AIClientRegistry;

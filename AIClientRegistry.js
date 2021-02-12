@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AIClientRegistry = void 0;
+exports.instance = exports.AIClientRegistry = void 0;
 const ConstructorRegistry_1 = require("@civ-clone/core-registry/ConstructorRegistry");
 const AIClient_1 = require("./AIClient");
 class AIClientRegistry extends ConstructorRegistry_1.ConstructorRegistry {
@@ -9,5 +9,6 @@ class AIClientRegistry extends ConstructorRegistry_1.ConstructorRegistry {
     }
 }
 exports.AIClientRegistry = AIClientRegistry;
+exports.instance = new AIClientRegistry();
 exports.default = AIClientRegistry;
 //# sourceMappingURL=AIClientRegistry.js.map

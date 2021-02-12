@@ -8,4 +8,5 @@ export declare class AIClientRegistry
   implements IConstructorRegistry<AIClient> {
   constructor();
 }
+export declare const instance: AIClientRegistry;
 export default AIClientRegistry;
