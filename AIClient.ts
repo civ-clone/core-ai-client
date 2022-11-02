@@ -14,18 +14,22 @@ export interface IAIClient extends IClient {
 
 export class AIClient extends Client implements IAIClient {
   #leaderRegistry: LeaderRegistry;
+  #randomNumberGenerator: () => number;
 
   constructor(
     player: Player,
-    leaderRegistry: LeaderRegistry = leaderRegistryInstance
+    leaderRegistry: LeaderRegistry = leaderRegistryInstance,
+    randomNumberGenerator: () => number = () => Math.random()
   ) {
     super(player);
 
     this.#leaderRegistry = leaderRegistry;
+    this.#randomNumberGenerator = randomNumberGenerator;
   }
 
   chooseCivilization(choices: typeof Civilization[]): void {
-    const Random = choices[Math.floor(choices.length * Math.random())],
+    const Random =
+        choices[Math.floor(choices.length * this.#randomNumberGenerator())],
       player = this.player(),
       civilization = new Random();
 
@@ -39,7 +43,8 @@ export class AIClient extends Client implements IAIClient {
       civilization.constructor as IConstructor<Civilization>
     );
 
-    const RandomLeader = leaders[Math.floor(Math.random() * leaders.length)];
+    const RandomLeader =
+      leaders[Math.floor(this.#randomNumberGenerator() * leaders.length)];
 
     civilization.setLeader(new RandomLeader());
   }

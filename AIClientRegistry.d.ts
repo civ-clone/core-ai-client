@@ -5,7 +5,8 @@ import {
 import AIClient from './AIClient';
 export declare class AIClientRegistry
   extends ConstructorRegistry<AIClient>
-  implements IConstructorRegistry<AIClient> {
+  implements IConstructorRegistry<AIClient>
+{
   constructor();
 }
 export declare const instance: AIClientRegistry;

@@ -6,7 +6,8 @@ import AIClient from './AIClient';
 
 export class AIClientRegistry
   extends ConstructorRegistry<AIClient>
-  implements IConstructorRegistry<AIClient> {
+  implements IConstructorRegistry<AIClient>
+{
   constructor() {
     super(AIClient);
   }

@@ -1,4 +1,3 @@
 # core-ai-client
 
-This is a template repo.
-
+Basic "AI" client objects. Includes random selections for `Civilization` and `Leader`.

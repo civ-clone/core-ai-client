@@ -8,7 +8,11 @@ export interface IAIClient extends IClient {
 }
 export declare class AIClient extends Client implements IAIClient {
   #private;
-  constructor(player: Player, leaderRegistry?: LeaderRegistry);
+  constructor(
+    player: Player,
+    leaderRegistry?: LeaderRegistry,
+    randomNumberGenerator?: () => number
+  );
   chooseCivilization(choices: typeof Civilization[]): void;
   chooseLeader(civilization: Civilization): void;
 }
